@@ -1,4 +1,3 @@
-
 const BASE_URL = "http://localhost:3000";
 
 class ApiError extends Error {
@@ -9,10 +8,22 @@ class ApiError extends Error {
 
 export const jsonApiInstance = async <T>(
   url: string,
-  init?: RequestInit
+  init?: RequestInit & { json?: unknown }
 ) => {
+  let headers = init?.headers ?? {};
+
+  if (init?.json) {
+    headers = {
+        'Content-Type': 'application/json',
+        ...headers
+    };
+
+    init.body = JSON.stringify(init.json)
+  }
+
   const result = await fetch(`${BASE_URL}${url}`, {
     ...init,
+    headers
   });
 
   if (!result.ok) {
@@ -23,4 +34,3 @@ export const jsonApiInstance = async <T>(
 
   return data;
 };
-
