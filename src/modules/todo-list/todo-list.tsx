@@ -2,9 +2,11 @@ import { useTodoList } from "./use-todo-list";
 import { useCreateTodo } from "./use-create-todo";
 import { useDeleteTodo } from "./use-delete-todo";
 import { useToggleTodo } from "./use-toggle-todo";
+import { useUser } from "../auth/use-user";
 
 export function TodoList() {
   const { error, isLoading, todoItems } = useTodoList();
+  const userQuery = useUser();
 
   const createTodo = useCreateTodo();
   const deleteTodo = useDeleteTodo();
@@ -19,7 +21,7 @@ export function TodoList() {
 
   return (
     <div className="p-5 mx-auto max-w-[1200px] mt-10">
-      <h1 className="text-3xl font-bold underline mb-5"> Todo LIst</h1>
+      <h1 className="text-3xl font-bold underline mb-5"> Todo LIst. {userQuery.data?.login}</h1>
 
       <form className="flex gap-2 mb-5" onSubmit={createTodo.handleCreate}>
         <input

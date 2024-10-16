@@ -1,17 +1,22 @@
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "../shared/api/query-client";
+import { Login } from "../modules/auth/login";
+import { LogoutButton } from "../modules/auth/logout-button";
+import { useUser } from "../modules/auth/use-user";
 import { TodoList } from "../modules/todo-list/todo-list";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Provider } from "react-redux";
-import { store } from "../shared/redux";
 
 export function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <TodoList />
-      </Provider>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
-  );
+  const user = useUser();
+
+  if (user.isLoading) {
+    return <div>Loading</div>;
+  }
+
+  if (user.data) {
+    return (
+      <>
+        <LogoutButton /> <TodoList />
+      </>
+    );
+  }
+
+  return <Login />;
 }

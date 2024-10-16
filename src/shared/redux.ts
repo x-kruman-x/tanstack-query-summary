@@ -16,7 +16,7 @@ import {
   export type AppThunk<R = void> = ThunkAction<
     R,
     AppState,
-    {},
+    any,
     UnknownAction
   >;
 
