@@ -2,6 +2,7 @@ import { Login } from "../modules/auth/login";
 import { LogoutButton } from "../modules/auth/logout-button";
 import { useUser } from "../modules/auth/use-user";
 import { TodoList } from "../modules/todo-list/todo-list";
+import { prefetchTodoList } from "../modules/todo-list/prefetch-todo-list";
 
 export function App() {
   const user = useUser();
@@ -11,6 +12,8 @@ export function App() {
   }
 
   if (user.data) {
+    prefetchTodoList();
+
     return (
       <>
         <LogoutButton /> <TodoList />
