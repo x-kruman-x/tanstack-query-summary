@@ -1,8 +1,4 @@
-import {
-  keepPreviousData,
-  useInfiniteQuery,
-  useQuery
-} from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { todoListApi } from "./api";
 import { useCallback, useRef, useState } from "react";
 
@@ -18,15 +14,10 @@ export function TodoList() {
     hasNextPage,
     isFetchingNextPage
   } = useInfiniteQuery({
-    queryKey: ["tasks", "list"],
-    queryFn: meta => todoListApi.getTodoList({ page: meta.pageParam }, meta),
-    enabled: enabled,
-    initialPageParam: 1,
-    getNextPageParam: result => result.next,
-    select: result => result.pages.flatMap(page => page.data)
+    ...todoListApi.getTodoListInfinityQueryOptions(),
+    enabled: enabled
   });
 
-  
   const cursorRef = useIntersection(() => {
     fetchNextPage();
   });
@@ -38,7 +29,6 @@ export function TodoList() {
   if (error) {
     return <div>error: {JSON.stringify(error)}</div>;
   }
-
 
   return (
     <div className="p-5 mx-auto max-w-[1200px] mt-10">
