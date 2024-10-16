@@ -9,8 +9,9 @@ import { store } from "../shared/redux";
 import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { onlineManager } from "@tanstack/query-core";
+import { Loader } from "./loader";
 
-onlineManager.setOnline(navigator.onLine)
+onlineManager.setOnline(navigator.onLine);
 
 const persister = createSyncStoragePersister({
   storage: window.localStorage
@@ -29,7 +30,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       }}
     >
       <Provider store={store}>
-        <App />
+        <Loader>
+          <App />
+        </Loader>
+
         <ReactQueryDevtools initialIsOpen={false} />
       </Provider>
     </PersistQueryClientProvider>

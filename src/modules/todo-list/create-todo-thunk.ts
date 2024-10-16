@@ -15,7 +15,7 @@ export const createTodoThunk = (text: string): AppThunk => async (
   if (!userId) {
     throw new Error("user not login");
   }
-  
+
   const user = await queryClient.fetchQuery(authApi.getUserById(userId));
 
   const newTodo: TodoDto = {
@@ -30,11 +30,11 @@ export const createTodoThunk = (text: string): AppThunk => async (
   });
 
   const prevTasks = queryClient.getQueryData(
-    todoListApi.getTodoListQueryOptions().queryKey
+    todoListApi.getTodoListQueryOptions({ userId }).queryKey
   );
 
   queryClient.setQueryData(
-    todoListApi.getTodoListQueryOptions().queryKey,
+    todoListApi.getTodoListQueryOptions({ userId }).queryKey,
     tasks => [...(tasks ?? []), newTodo]
   );
 
@@ -44,7 +44,7 @@ export const createTodoThunk = (text: string): AppThunk => async (
     }).mutate(newTodo);
   } catch (e) {
     queryClient.setQueryData(
-      todoListApi.getTodoListQueryOptions().queryKey,
+      todoListApi.getTodoListQueryOptions({ userId }).queryKey,
       prevTasks
     );
   } finally {
