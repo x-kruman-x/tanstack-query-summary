@@ -21,7 +21,10 @@ export function TodoList() {
 
   return (
     <div className="p-5 mx-auto max-w-[1200px] mt-10">
-      <h1 className="text-3xl font-bold underline mb-5"> Todo LIst. {userQuery.data?.login}</h1>
+      <h1 className="text-3xl font-bold underline mb-5">
+        {" "}
+        Todo LIst. {userQuery.data?.login}
+      </h1>
 
       <form className="flex gap-2 mb-5" onSubmit={createTodo.handleCreate}>
         <input
@@ -30,7 +33,7 @@ export function TodoList() {
           name="text"
         />
         <button
-          disabled={createTodo.isPending}
+          disabled={createTodo.isLoading}
           className="rounded p-2 border border-teal-500 disabled:opacity-50"
         >
           Создать
