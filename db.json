@@ -312,12 +312,6 @@
       "userId": "1"
     },
     {
-      "id": "50",
-      "text": "Enhance product features",
-      "done": false,
-      "userId": "1"
-    },
-    {
       "id": "51",
       "text": "Negotiate vendor contracts",
       "done": true,
@@ -564,18 +558,6 @@
       "userId": "1"
     },
     {
-      "id": "92",
-      "text": "Coordinate logistics",
-      "done": true,
-      "userId": "1"
-    },
-    {
-      "id": "L28NIBqsaSh6Hj5P2skfo",
-      "done": false,
-      "text": "",
-      "userId": "1"
-    },
-    {
       "id": "bSQ9N34hoRdQmC01-yzQc",
       "done": false,
       "text": "new",
@@ -591,6 +573,12 @@
       "id": "AghTjMwJoWlw_PZbPIVgw",
       "done": false,
       "text": "asdfasdf. Owner: alice",
+      "userId": "1"
+    },
+    {
+      "id": "_FOvUnCXVWWIFHZTrPukD",
+      "done": false,
+      "text": ". Owner: alice",
       "userId": "1"
     }
   ]
