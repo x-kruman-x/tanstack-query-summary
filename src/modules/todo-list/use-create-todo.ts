@@ -8,8 +8,13 @@ export function useCreateTodo() {
 
   const createTodoMutation = useMutation({
     mutationFn: todoListApi.createTodo,
-    async onSettled() {
-      await queryClient.invalidateQueries(todoListApi.getTodoListQueryOptions());
+    // onSuccess срабатывает при успехе
+    // onError срабатывает при ошибке
+    async onSettled() { // срабатывает всегда 
+      // await queryClient.invalidateQueries(todoListApi.getTodoListQueryOptions()); // invalidateQueries помечает все запросы, которые подходят по ключу // если закинуть getTodoListQueryOptions(), то перезапросит только этот запрос
+      await queryClient.invalidateQueries({
+        queryKey: [todoListApi.baseKey] 
+      }); // при инвалидации по базовому ключу инвалиидируются все запросы с этим ключом, то есть в нашем случае вообще все запросы
     }
   });
 
@@ -31,6 +36,6 @@ export function useCreateTodo() {
 
   return {
     handleCreate,
-    isPending: createTodoMutation.isPending
+    isPending: createTodoMutation.isPending 
   };
 }

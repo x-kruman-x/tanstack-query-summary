@@ -596,7 +596,7 @@
     {
       "id": "97",
       "text": "Update promotional materials",
-      "done": false,
+      "done": true,
       "userId": "2"
     },
     {
@@ -608,7 +608,7 @@
     {
       "id": "99",
       "text": "Launch affiliate program",
-      "done": true,
+      "done": false,
       "userId": "2"
     },
     {
@@ -618,87 +618,9 @@
       "userId": "3"
     },
     {
-      "id": "UIhXeEO35IeRToehS-MfN",
-      "done": false,
-      "text": "Text",
-      "userId": "1"
-    },
-    {
-      "id": "q-t7b33BTyBRRLSVwU4lc",
-      "done": false,
-      "text": "asdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "m3fCfgr5c8EGN1WJdpmfC",
-      "done": false,
-      "text": "asdfasdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "lnlGNe7JU53Gx3DPiAVR7",
-      "done": false,
-      "text": "afsdfasdfasdfa",
-      "userId": "1"
-    },
-    {
-      "id": "ScIOP8vZuCrvuaaOceUGN",
-      "done": false,
-      "text": "asdfasdf",
-      "userId": "1"
-    },
-    {
-      "id": "Th-e8u3Ik9yvRHk4ymfGo",
-      "done": false,
-      "text": "asdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "8jA792s_SuvXv47_TD_wX",
-      "done": false,
-      "text": "afsdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "GIVtKjEm65R4wIvq6FXSF",
-      "done": false,
-      "text": "123",
-      "userId": "1"
-    },
-    {
-      "id": "1MBVdEKgvKFDchMgTgqAa",
-      "done": false,
-      "text": "asdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "QAAwp7uCClR2N_PbKaTW_",
-      "done": false,
-      "text": "asdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "aQ5W2f6_0zbPxlCJAq3Y3",
-      "done": false,
-      "text": "asdfasd",
-      "userId": "1"
-    },
-    {
-      "id": "Goc-4DJnkK3c0Sgqs_gE8",
-      "done": false,
-      "text": "asdfasd",
-      "userId": "1"
-    },
-    {
       "id": "s8YuDhPP2UsRwMEYCY_o3",
-      "done": false,
+      "done": true,
       "text": "1",
-      "userId": "1"
-    },
-    {
-      "id": "HwXxXuWIXG9xQwNi0qEIc",
-      "done": false,
-      "text": "asdfasdfasdfa",
       "userId": "1"
     }
   ]
